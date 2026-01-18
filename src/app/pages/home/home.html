@@ -1,0 +1,79 @@
+<nav class="navbar">
+  <div class="nav-left">
+    <h1 class="logo">E-Commerce</h1>
+  </div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a routerLink="/login">Login</a></li>
+    <li><a routerLink="/profile">Profile</a></li>
+  </ul>
+</nav>
+
+<!-- HERO / CAROUSEL -->
+<section class="hero">
+  <div id="carouselExample" class="carousel slide">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img
+          src="https://images.unsplash.com/photo-1607082349566-187342175e2f"
+        />
+      </div>
+
+      <div class="carousel-item">
+        <img
+          src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f"
+        />
+      </div>
+
+      <div class="carousel-item">
+        <img
+          src="https://images.unsplash.com/photo-1555529771-35a38b7c6e12"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-overlay">
+    <h1>Discover Amazing Products</h1>
+    <p>Shop smart. Shop fast. Shop with confidence.</p>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section">
+  <h2>Featured Products</h2>
+
+  <div class="products-grid">
+    @for(product of products(); track $index) {
+      <div class="product-card">
+        <div class="product-info">
+          <h3>{{ product.name }}</h3>
+          <p>{{ product.description }}</p>
+        </div>
+
+        <div class="product-footer">
+          <span class="price">₹ {{ product.price }}</span>
+          <button (click)="placeOrder(product._id)">
+            Buy Now
+          </button>
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <section id="about">
+    <h2>About Us</h2>
+    <p>
+      We bring premium products with quality assurance and fast delivery.
+    </p>
+  </section>
+
+  <p class="copyright">
+    © 2024 E-Commerce. All Rights Reserved.
+  </p>
+</footer>

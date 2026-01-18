@@ -1,0 +1,33 @@
+.navbar {
+  background: #0f172a;
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+
+.container {
+  max-width: 420px;
+  margin: 60px auto;
+  padding: 24px;
+  border-radius: 12px;
+  box-shadow: 0 12px 40px rgba(0,0,0,.1);
+}
+
+input, select, button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+}
+
+button {
+  background: #0f172a;
+  color: white;
+  cursor: pointer;
+}
+
+.success { color: #16a34a; }
+.error { color: #dc2626; }
+
+

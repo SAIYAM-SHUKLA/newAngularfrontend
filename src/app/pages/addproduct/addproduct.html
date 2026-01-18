@@ -1,0 +1,24 @@
+<nav class="navbar">
+  <a routerLink="/"> Home</a>
+  <a routerLink="/profile">Profile</a>
+ 
+</nav>
+
+<div class="container">
+  <h2>Add Product</h2>
+
+  <form (ngSubmit)="addProduct()">
+    <input placeholder="Product Name" [(ngModel)]="name" name="name" required>
+    <textarea placeholder="Description" [(ngModel)]="description" name="description"></textarea>
+    <input type="number" placeholder="Price" [(ngModel)]="price" name="price">
+    <input type="number" placeholder="Stock" [(ngModel)]="stock" name="stock">
+    <input placeholder="Category" [(ngModel)]="category" name="category">
+
+    <button type="submit">Add Product</button>
+  </form>
+
+  @if (message()) {
+    <p class="status">{{ message() }}</p>
+  }
+</div>
+

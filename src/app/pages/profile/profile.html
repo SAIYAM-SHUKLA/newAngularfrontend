@@ -1,0 +1,53 @@
+<nav class="navbar">
+  <h1 class="logo">E-Commerce</h1>
+
+  <ul class="nav-links">
+    <li><a routerLink="">Home</a></li>
+  </ul>
+</nav>
+
+<section class="profile-container">
+  <h2>User Profile</h2>
+
+  @if (message) {
+    <p class="message">{{ message }}</p>
+  }
+
+  @if (showProfile()) {
+    <div class="profile-card">
+      <p><strong>Name:</strong> {{ name() }}</p>
+      <p><strong>Email:</strong> {{ email }}</p>
+      <p><strong>Role:</strong> {{ role }}</p>
+
+      @if (role === 'seller') {
+        <button routerLink="/addpro" class="add-product-btn">
+          Add Product
+        </button>
+      }
+    </div>
+  }
+
+  @if (orders().length > 0) {
+    <div class="orders-section">
+      <h3>Your Orders</h3>
+
+      @for (order of orders(); track $index) {
+        <div class="order-card">
+          <p><strong>Order ID:</strong> {{ order._id }}</p>
+          <p><strong>Product:</strong> {{ order.productId.name }}</p>
+          <p><strong>Price:</strong> ₹{{ order.productId.price }}</p>
+          <p><strong>Quantity:</strong> {{ order.quantity }}</p>
+          <p><strong>Total:</strong> ₹{{ order.totalAmount }}</p>
+          <p>
+            <strong>Date:</strong>
+            {{ order.createdAt | date: 'mediumDate' }}
+          </p>
+        </div>
+      }
+    </div>
+  }
+</section>
+
+<footer>
+  <p>© 2024 E-Commerce. All Rights Reserved.</p>
+</footer>

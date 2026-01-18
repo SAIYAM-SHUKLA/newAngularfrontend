@@ -1,0 +1,44 @@
+<nav class="navbar">
+  <div class="nav-left">
+    <h1 class="logo">E-Commerce</h1>
+  </div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/">Home</a></li>
+    <li><a routerLink="/reg">New User? Register</a></li>
+  </ul>
+</nav>
+
+<section class="login-container">
+  <div class="login-card">
+    <h2>Login</h2>
+
+    <form (ngSubmit)="login()">
+      <label>Email</label>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        required
+      />
+
+      <label>Password</label>
+      <input
+        type="password"
+        [(ngModel)]="password"
+        name="password"
+        required
+      />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <p class="message" [style.color]="messageColor">
+      {{ message }}
+    </p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2024 E-Commerce. All Rights Reserved.</p>
+</footer>
